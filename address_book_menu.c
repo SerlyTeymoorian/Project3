@@ -157,5 +157,40 @@ Status edit_contact(AddressBook *address_book)
 
 Status delete_contact(AddressBook *address_book)
 {
-	/* Add the functionality for delete contacts here */
+	char choice[255]; 
+    char searchWord[255];
+    char searchBy[255];
+    char select[10];
+    while(strcmp(choice,'0') !=0)
+    {
+        //call menu_header function 
+        menu_header("Search Contact to Delete by: "); 
+        strcmp(select, "select");
+        //choices 
+        printf("\n0. Back\n");
+        printf("1. Name\n");
+        printf("2. Phone No 1\n");
+        printf("4. Serial No\n");
+        prontf("Please select an option for search: "); 
+        scanf("%s", choice); //save the result in var choice 
+        //input validation loop 
+        while((int)choice <0 || (int)choice > 4)
+        {
+            //call menu_header function 
+            menu_header("Search Contact to Delete by: "); 
+            strcmp(select, "select");
+            //choices 
+            printf("\n0. Back\n");
+            printf("1. Name\n");
+            printf("2. Phone No 1\n");
+            printf("4. Serial No\n");
+            prontf("Please select an option for search: "); 
+            scanf("%s", choice); //save the result in var choice 
+        }
+        //Back is chosen 
+        if(strcmp(choice, '0') ==0)
+        {
+            break; 
+        }
+    }
 }
