@@ -13,6 +13,8 @@
 #include "address_book_menu.h"
 #include "address_book.h"
 
+extern AddressBook *newAddress;
+
 int get_option(int type, const char *msg)
 {
 	/*
@@ -187,10 +189,54 @@ Status delete_contact(AddressBook *address_book)
             prontf("Please select an option for search: "); 
             scanf("%s", choice); //save the result in var choice 
         }
-        //Back is chosen 
+        //Back 
         if(strcmp(choice, '0') ==0)
         {
-            break; 
+            break; //stop 
+        }
+        //Name 
+        else if(strcmp(choice, '1') ==0)
+        {
+            printf("\nEnter the name: ");
+            scanf("%s", searchWord);
+            strcpy(searchBy, "Name"); 
+        }
+        //Phone Number  
+        else if(strcmp(choice, '2') ==0)
+        {
+            printf("\nEnter Phone No 1: ");
+            scanf("%s", searchWord);
+            strcpy(searchBy, "Phone"); 
+        }
+        //Email 
+        else if(strcmp(choice, '3') ==0)
+        {
+            printf("\nEnter Email ID 1: ");
+            scanf("%s", searchWord);
+            strcpy(searchBy, "Email"); 
+        }
+        //Serial No 
+        else if(strcmp(choice, '4') ==0)
+        {
+            printf("\nEnter Serial No: ");
+            scanf("%s", searchWord);
+            strcpy(searchBy, "Serial"); 
+        }
+        //view the search results 
+        menu_header("Search Result:\n");
+        printf("====================================================================================");
+        printf("\n: S.No : Name                              : Phone No                          : Email ID                                  :");
+
+        for(int i=0; i < newAddress ->count; ++i)
+        {
+            if(search(searchWord, address_book, i, 0, searchBy, e_search) == e_success)
+            {
+                 char format[20] = " ";
+                ContactInfo *contactPtr = newAddress ->list;
+                printf("====================================================================================");
+            }
+           
+
         }
     }
 }
