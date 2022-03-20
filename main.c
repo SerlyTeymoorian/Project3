@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdio_ext.h>
+//#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -17,14 +17,15 @@ int main(void)
 
 	if (ret == e_success)
 	{
-		/* Show all the available menu */
-		ret = menu(&address_book);
+		// /* Show all the available menu */
+		// ret = menu(&address_book);
 
-		if (ret == e_success)
-		{
-			/* Save the entries */
-			save_prompt(&address_book);
-		}
+		// if (ret == e_success)
+		// {
+		// 	/* Save the entries */
+		// 	save_prompt(&address_book);
+		// }
+        printf("SUCCESS"); 
 	}
 
 	return 0;
