@@ -40,7 +40,8 @@ Status load_file(AddressBook *address_book)
 		char line[500];
 		char *number;
 		int len;
-		for (address_book->count = 0; fgets(line, 500, address_book->fp); address_book->count++) { // read file line by line
+		for (address_book->count = 0; fgets(line, 500, address_book->fp); address_book->count++) 
+        { // read file line by line
 			ContactInfo c; // create a new contact
 
 			// Contacts have a dynamic amount of phone numbers and emails, so they must be cleared first
