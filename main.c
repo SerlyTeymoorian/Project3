@@ -17,15 +17,14 @@ int main(void)
 
 	if (ret == e_success)
 	{
-		// /* Show all the available menu */
-		// ret = menu(&address_book);
+		/* Show all the available menu */
+		ret = menu(&address_book);
 
-		// if (ret == e_success)
-		// {
-		// 	/* Save the entries */
-		// 	save_prompt(&address_book);
-		// }
-        printf("SUCCESS"); 
+		if (ret == e_success)
+		{
+			/* Save the entries */
+			save_prompt(&address_book);
+		}
 	}
 
 	return 0;
